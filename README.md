@@ -1,7 +1,7 @@
 # SOP-Solver
 The own mathematical programming solver, Search Optimal Point Solver.
 
-I would like to develop own mathematical programming solver.
+I would like to develop my own mathematical programming solver.
 For implementing issue, I used C++ with Eigen Library to do complicate linear algebra more efficient.
 
 The ultimate goal is to build a geneal MIP Solver.
