@@ -83,6 +83,10 @@ bool SOPlpSolve::primal_simplex(SOPModel &model){
         // step 8. update current primal and dual solution
         for (int i = 0; i < model.get_num_rows(); ++i){
             model.set_rhs(i, model.get_rhs()(i)-t*delta_x_B[i]);
+            // model.set_header(i, model.get_header()(i)-s*delta_z_N[i]);
+        }
+
+        for (int i = 0; i < model.get_num_cols(); ++i){
             model.set_header(i, model.get_header()(i)-s*delta_z_N[i]);
         }
         std::cout<<"finish step 8"<<std::endl;
