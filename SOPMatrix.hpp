@@ -1,24 +1,24 @@
 #ifndef _SOPMATRIX_H_
 #define _SOPMATRIX_H_
 
-#include<bits/stdc++.h>
-#include<Eigen/Dense>
+#include <bits/stdc++.h>
+#include <eigen3/Eigen/Dense>
+#include <eigen3/Eigen/Core>
 
 typedef Eigen::VectorXd SOPVector;
 typedef Eigen::MatrixXd SOPMatrix;
 
-class SOPVariables{
+class SOPVariables {
 private:
     std::string name;
     char type;
     int id;
     double lb;
     double ub;
+
 protected:
-
 public:
-    SOPVariables(){
-
+    SOPVariables() {
     }
 
     SOPVariables(std::string _name, char _type, int _id);
@@ -27,17 +27,16 @@ public:
     int get_var_id();
 };
 
-class SOPExpression{
+class SOPExpression {
 private:
     SOPVector coef;
     std::vector<SOPVariables> vars;
-protected:
 
+protected:
 public:
-    SOPExpression(){
-        
+    SOPExpression() {
     }
-   
+
     void addTerm(const double coef, const SOPVariables var);
     void addTerms(const double* coefs, const SOPVariables* vars);
     int getSize();
@@ -48,30 +47,28 @@ public:
     void clear();
 };
 
-class SOPObjective:public SOPExpression{
+class SOPObjective : public SOPExpression {
 private:
     SOPVector coef;
     std::vector<SOPVariables> vars;
+
 protected:
-
 public:
-    SOPObjective(){
-
+    SOPObjective() {
     }
 };
 
-class SOPRange:public SOPExpression{
+class SOPRange : public SOPExpression {
 private:
     SOPVector coef;
     std::vector<SOPVariables> vars;
     double rhs;
     char direction;
     std::string con_name;
+
 protected:
-
 public:
-    SOPRange(){
-
+    SOPRange() {
     }
 
     SOPRange(SOPVector _coef, std::vector<SOPVariables> _vars, double _rhs, char _direction, std::string _con_name);

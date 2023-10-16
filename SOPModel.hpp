@@ -3,10 +3,10 @@
 
 #include "SOPMatrix.hpp"
 
-class SOPModel{
+class SOPModel {
 private:
-    int num_rows=0;
-    int num_cols=0;
+    int num_rows = 0;
+    int num_cols = 0;
     std::vector<SOPVariables> nonbasic;
     std::vector<SOPVariables> basic;
     SOPObjective obj;
@@ -16,20 +16,19 @@ private:
     SOPMatrix A;
     SOPMatrix N;
     SOPMatrix B;
-    SOPMatrix eta; 
+    SOPMatrix eta;
+
 protected:
-
 public:
-    SOPModel(){
-
+    SOPModel() {
     }
-    
+
     SOPVariables create_nonbasic(std::string name, char type, int id, double lb, double ub);
     void addMax(SOPObjective _obj);
     void addMin(SOPObjective _obj);
-    SOPRange addLe(SOPExpression &con, double rhs, std::string con_name);
-    SOPRange addGe(SOPExpression &con, double rhs, std::string con_name);
-    SOPRange addEq(SOPExpression &con, double rhs, std::string con_name);
+    SOPRange addLe(SOPExpression& con, double rhs, std::string con_name);
+    SOPRange addGe(SOPExpression& con, double rhs, std::string con_name);
+    SOPRange addEq(SOPExpression& con, double rhs, std::string con_name);
     void create_basis();
     int get_num_rows();
     int get_num_cols();
@@ -52,14 +51,11 @@ public:
     void clear();
 };
 
-class SOPSolver{
+class SOPSolver {
 private:
-
 protected:
-
 public:
-    SOPSolver(){
-
+    SOPSolver() {
     }
 
     bool solve(SOPModel model, int algorithm);
