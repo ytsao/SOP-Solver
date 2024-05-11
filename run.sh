@@ -1,3 +1,3 @@
 #! /bin/bash
-g++ main.cpp SOPMatrix.cpp SOPModel.cpp SOPlpsolver.cpp -o main
+g++ main.cpp ./include/SOPMatrix.cpp ./include/SOPModel.cpp ./include/SOPlpsolver.cpp -o main
 ./main

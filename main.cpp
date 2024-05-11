@@ -1,6 +1,6 @@
-#include "SOPMatrix.hpp"
-#include "SOPModel.hpp"
-#include "SOPlpsolver.hpp"
+#include "include/SOPMatrix.hpp"
+#include "include/SOPModel.hpp"
+#include "include/SOPlpsolver.hpp"
 
 int main() {
     std::cout << "hello, world" << std::endl;
