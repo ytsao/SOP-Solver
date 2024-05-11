@@ -10,3 +10,20 @@ In current stage, only include "primal simplex method" & "dual simplex method"
 After finishing "barrier method" & "network simlex method", I will move on to implement "The Wolfes' simplex method" for solving quadratic programs.
 
 During the developing, I still study some classical textbook to strengthen my professional knowledge about discrete & combinatorial opitmization.
+
+## Dependency
+1. Eigen3+
+```cmd
+git clone https://gitlab.com/libeigen/eigen.git
+cd eigen
+mkdir build
+cd build
+cmake ..
+sudo make install
+sudo cp -r /usr/local/include/eigen3/Eigen usr/local/include
+```	
+
+## How to use?
+```cmd
+./run.sh
+```
